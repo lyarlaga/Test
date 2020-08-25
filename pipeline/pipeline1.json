@@ -1,0 +1,222 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
+					"sink": {
+						"type": "OracleSink",
+						"writeBatchSize": 10000
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "THD_SKU_NBR",
+									"type": "String"
+								},
+								"sink": {
+									"name": "THD_SKU_NBR",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CLOROX_BU",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CLOROX_BU",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CLOROX_BRAND",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CLOROX_BRAND",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SKU_STATUS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SKU_STATUS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CASE_UPC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CASE_UPC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ITEM_UPC",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ITEM_UPC",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CASE_PACK",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CASE_PACK",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "STAT_VALUE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "STAT_VALUE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "STAT_PER_UNIT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "STAT_PER_UNIT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DFC_FLAG",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DFC_FLAG",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AUTH_STORES_SELLING",
+									"type": "String"
+								},
+								"sink": {
+									"name": "AUTH_STORES_SELLING",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FLEX1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FLEX1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FLEX2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FLEX2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FLEX3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FLEX3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FLEX4",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FLEX4",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FLEX5",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FLEX5",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CREATED_DATE",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CREATED_DATE",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "CLXHD_PRODUCT_SOURCE",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "CLXHD_PRODUCT_TARGET",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2020-04-10T20:26:31Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

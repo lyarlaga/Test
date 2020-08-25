@@ -1,0 +1,17 @@
+{
+	"name": "CLXHD_PRODUCT_TARGET",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Oracle_BIDEV",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "LYARLAGA",
+			"table": "CLXHD_PRODUCT_TARGET"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
